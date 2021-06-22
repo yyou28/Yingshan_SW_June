@@ -1,0 +1,26 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Import data
+
+```{r}
+library(haven)
+airline <- read_sas("http://www.principlesofeconometrics.com/sas/airline.sas7bdat", 
+    NULL)
+
+airline
+```
+
+
+data wrangling
+
+```{r}
+library(ggplot2)
+ggplot(airline) +
+ aes(x = Y) +
+ geom_histogram(bins = 30L, fill = "#0c4c8a") +
+ theme_minimal()
+
+```
